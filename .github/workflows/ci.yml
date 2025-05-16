@@ -1,0 +1,22 @@
+name: CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Vérifier la version de Node.js
+      run: node --version
+
+    - name: Vérifier la version de npm
+      run: npm --version
+
+    # Ici, tu peux ajouter des étapes pour lancer des tests par exemple.
